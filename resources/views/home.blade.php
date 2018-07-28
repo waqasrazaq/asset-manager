@@ -33,7 +33,7 @@
 						<td>{{$asset->status}}</td>
 						<td>{{$asset->owner}}</td>
 						<td>
-							<a href="{{ url('') }}" class="label label-primary">Read</a> |
+							<a href='{{ url("/read/{$asset->id}") }}' class="label label-primary">Read</a> |
 							<a href='{{ url("/update/{$asset->id}") }}' class="label label-success">Update</a> |
 							<a href="{{ url('') }}" class="label label-danger">Delete</a>
 						</td>

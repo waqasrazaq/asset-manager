@@ -80,4 +80,14 @@ class AssetsController extends Controller
         Asset::where('id', $id)->update($data);
         return redirect('/')->with('info', 'Asset Updated Successfully');
     }
+
+    /**
+     * [Fetch asset information from databse and pass it to read view]
+     * @param int $id ID of the asset
+     */
+    public function read($id) {
+        $assets = Asset::find($id);
+        
+        return view('read', ['assets'=>$assets]);
+    }
 }
