@@ -12,3 +12,6 @@
 */
 
 Route::get('/', 'AssetsController@home');
+Route::get('/add', function() {
+	return view('add');
+});
