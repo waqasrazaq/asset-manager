@@ -16,3 +16,5 @@ Route::get('/add', function() {
 	return view('add');
 });
 Route::post('/insert', 'AssetsController@add');
+Route::get('/update/{id}', 'AssetsController@update');
+Route::post('/edit/{id}', 'AssetsController@edit');
