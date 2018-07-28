@@ -1,7 +1,7 @@
 @include('inc.header')
 <div class="container">
 	<div class="row">
-		<legend>All Assests</legend>
+		<legend>All Assets</legend>
 		<table class="table table-striped table-hover ">
 			<thead>
 				<tr>
@@ -21,7 +21,7 @@
 							<td>{{$asset->label}}</td>
 							<td>{{$asset->type}}</td>
 							<td>{{$asset->status}}</td>
-							<td>{{$asset->status}}</td>
+							<td>{{$asset->owner}}</td>
 							<td>
 								<a href="{{ url('') }}" class="label label-primary">Read</a> |
 								<a href="{{ url('') }}" class="label label-success">Update</a> |
