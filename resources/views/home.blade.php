@@ -14,17 +14,22 @@
 			</thead>
 			<tbody>
 				
-				<tr>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td>
-						<a href="{{ url('') }}" class="label label-primary">Read</a> |
-						<a href="{{ url('') }}" class="label label-success">Update</a> |
-						<a href="{{ url('') }}" class="label label-danger">Delete</a>
-					</td>
-				</tr>
+				@if(count($assets) > 0) 
+					@foreach($assets->all() as $asset) 
+					
+						<tr>
+							<td>{{$asset->label}}</td>
+							<td>{{$asset->type}}</td>
+							<td>{{$asset->status}}</td>
+							<td>{{$asset->status}}</td>
+							<td>
+								<a href="{{ url('') }}" class="label label-primary">Read</a> |
+								<a href="{{ url('') }}" class="label label-success">Update</a> |
+								<a href="{{ url('') }}" class="label label-danger">Delete</a>
+							</td>
+						</tr>
+					@endforeach
+				@endif		
 					
 			</tbody>
 		</table> 
