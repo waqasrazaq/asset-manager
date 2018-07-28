@@ -19,3 +19,4 @@ Route::post('/insert', 'AssetsController@add');
 Route::get('/update/{id}', 'AssetsController@update');
 Route::post('/edit/{id}', 'AssetsController@edit');
 Route::get('/read/{id}', 'AssetsController@read');
+Route::get('/delete/{id}', 'AssetsController@delete');

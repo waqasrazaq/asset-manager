@@ -90,4 +90,14 @@ class AssetsController extends Controller
         
         return view('read', ['assets'=>$assets]);
     }
+
+    /**
+     * [Delete an asset from databse associated by passed id]
+     * @param int $id ID of the asset
+     */
+    public function delete($id) {
+        $assets = Asset::where('id', $id)->delete();
+        
+        return redirect('/')->with('info', 'Asset Deleted Successfully');
+    }
 }
