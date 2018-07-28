@@ -2,9 +2,19 @@
 <div class="container">
 	<div class="row">
 		<div class="col-md-6">
-			<form class="form-horizontal">
+			<form class="form-horizontal" method="post" action="{{ url('/insert') }}">
+				{{csrf_field()}}
 				<fieldset>
 					<legend>Add Assset</legend>
+
+					@if( count($errors)>0 )
+						@foreach($errors->all() as $error) 
+						<div class="alert alert-danger">
+							{{$error}}
+						</div>
+						@endforeach
+					@endif
+
 					<div class="form-group">
 						<label for="label" class="col-lg-2 control-label">Label</label>
 						<div class="col-lg-10">

@@ -19,4 +19,25 @@ class AssetsController extends Controller
     	
     	return view('home', ['assets'=>$assets]);
     }
+
+
+    public function add(Request $request) {
+    	$this->validate($request, [
+    		'label' => 'required',
+    		'description' => 'required',
+    		'type' => 'required',
+    		'status' => 'required',
+    		'owner' => 'required'
+    	]);
+    	
+    	$asset = new Asset;
+    	$asset->label = $request->input('label');
+    	$asset->description = $request->input('description');
+    	$asset->type = $request->input('type');
+    	$asset->status = $request->input('status');
+    	$asset->owner = $request->input('owner');
+
+    	$asset->save();
+    	return redirect('/')->with('info', 'Asset Saved Successfully');
+    }
 }

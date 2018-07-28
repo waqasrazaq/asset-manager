@@ -15,3 +15,4 @@ Route::get('/', 'AssetsController@home');
 Route::get('/add', function() {
 	return view('add');
 });
+Route::post('/insert', 'AssetsController@add');
